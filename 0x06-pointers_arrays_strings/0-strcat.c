@@ -1,16 +1,26 @@
-#include "man.h"
+#include "main.h"
 
 /**
- * *_strcat - concatenates two strings.
- * @dest - first strinh
- * @src - second string
- * Return: dest
+ * _strcat - concat 2 string
+ * @dest:char
+ * @src:char
+ * Return:char
  */
 char *_strcat(char *dest, char *src)
 {
-	*dest[] = "hello";
-	*src[] = "world";
+	char *s = dest;
 
-	*_strcat(*dest, *src);
-	return(*dest);
+	while (*dest != '\0')
+	{
+		dest++;
+	}
+
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	*dest = '\0';
+	return (s);
 }

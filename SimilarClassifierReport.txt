@@ -1,0 +1,5 @@
+SimilarImageClassifier:2023-04-03 00:00:01
+SimilarImageClassifier:2023-04-04 00:00:01
+6,2,0/Screenshot (21).png,260173,0/Screenshot (20).png,302160
+7,2,Screenshots/Screenshot_20230403-125304.png,351474,Screenshots/Screenshot_20230403-134045.png,346809
+Grouping Finished, Taken Time in ms :3722648

@@ -4,15 +4,15 @@
  * n: variable
  * Return: void
  */
+double sqrt_recursive(double n, double approx) {
+  double next_approx = 0.5 * (approx + n / approx);
+  if (next_approx == approx) {
+    return approx;
+  } else {
+    return sqrt_recursive(n, next_approx);
+  }
+}
 int _sqrt_recursion(int n)
 {
-	int x = n;
-	int y = 1;
-	int epsilon = 0.00001;
-
-	while ((x - y) > epsilon)
-	{
-		x = (x + y) / 2;
-		y = n / 2;
-	}
+	return sqrt_recursive(n, n / 2);
 }

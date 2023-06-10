@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _print_rev_recursion - function
- * *s: pointer
+ * @s: pointer
  * Return: void
  */
 void _print_rev_recursion(char *s)

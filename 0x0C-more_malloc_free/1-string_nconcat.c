@@ -1,33 +1,39 @@
-char *string_nconcat(char *s1, char *s2, unsigned int n) {
-  // Check for errors
-  if (s1 == NULL || s2 == NULL) {
-    return NULL;
-  }
+#include "main.h"
 
-  // Get the length of the first string
-  size_t len1 = strlen(s1);
+/**
+ * _realloc - reallocates a memory block using malloc and free
+ *
+ * @ptr: pointer to the memory previously allocated
+ * @old_size:is the size, in bytes, of the allocated space for ptr
+ * @new_size: the new size, in bytes of the new memory block
+ *
+ * Return: pointer allocate new size memory, or NULL
+ */
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+{
+	char *p;
+	unsigned int i, n = new_size;
+	char *oldp = ptr;
 
-  // Check if n is greater than the length of the second string
-  if (n > strlen(s2)) {
-    n = strlen(s2);
-  }
-
-  // Allocate memory for the new string
-  char *new_string = malloc(len1 + n + 1);
-  if (new_string == NULL) {
-    return NULL;
-  }
-
-  // Copy the first string into the new string
-  memcpy(new_string, s1, len1);
-
-  // Copy the first n bytes of the second string into the new string
-  memcpy(new_string + len1, s2, n);
-
-  // Null terminate the new string
-  new_string[len1 + n] = '\0';
-
-  // Return a pointer to the new string
-  return new_string;
+	if (ptr == NULL)
+	{
+		p = malloc(new_size);
+		return (p);
+	}
+	else if (new_size == 0)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	else if (new_size == old_size)
+		return (ptr);
+	p = malloc(new_size);
+	if (p == NULL)
+		return (NULL);
+	if (new_size > old_size)
+		n = old_size;
+	for (i = 0; i < n; i++)
+		p[i] = oldp[i];
+	free(ptr);
+	return (p);
 }
-

@@ -5,7 +5,7 @@
 
 /**
  * list_len - check the code for Holberton School students.
- * @h: name of the list
+ * @h: name of the list data
  * Return: the number of nodes.
  */
 size_t list_len(const list_t *h)
